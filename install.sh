@@ -155,6 +155,7 @@ EOF
 function configure_accelerator() {
     while true; do
         read -p "$TXT_ACCELERATION_CONFIG_ADD" accelerator_confirm
+        accelerator_confirm=${accelerator_confirm:-y}
         case "$accelerator_confirm" in
             [yY])
                 if ping -c 1 mirror.ccs.tencentyun.com &>/dev/null; then
@@ -236,6 +237,7 @@ function Install_Docker(){
     else
         while true; do
         read -p "$TXT_INSTALL_DOCKER_CONFIRM" install_docker_choice
+        install_docker_choice=${install_docker_choice:-y}
             case "$install_docker_choice" in
                 [yY])
                     log "$TXT_DOCKER_INSTALL_ONLINE"
